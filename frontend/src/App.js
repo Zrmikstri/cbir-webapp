@@ -38,7 +38,7 @@ function App() {
 
 			setUploading(true);
 			axios
-				.post('http://localhost:5000/api/test2', formData)
+				.post('/api/test2', formData)
 				.then((res) => {
 					setResultImages(res.data);
 					setUploading(false);
@@ -48,9 +48,6 @@ function App() {
 				});
 		};
 	};
-
-	console.log('fuck' + resultImages[0]?.image);
-	console.log('fuck1' + cropper?.getCroppedCanvas()?.toDataURL());
 
 	return (
 		<div>

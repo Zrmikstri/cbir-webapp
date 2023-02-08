@@ -11,7 +11,7 @@ def hello_world():
 
 @app.route('/api/test2', methods=['POST'])
 def test2():
-    from utils import base64URL_to_image, image_to_base64URL 
+    from backend.utils import base64URL_to_image, image_to_base64URL 
     
     # Decode query image sent by user
     image = base64URL_to_image(request.form.get('image'))

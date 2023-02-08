@@ -1,12 +1,12 @@
 from flask import Flask, jsonify, request, make_response
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend/build', static_url_path='/')
 CORS(app, resources=r'/api/*')
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    app.send_static_file('index.html')
 
 
 @app.route('/api/test2', methods=['POST'])
